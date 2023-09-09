@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Leg Disease Detection</title>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container">
+    <br>
+    <h1>Knock Knees Detection</h1>
+    <br>
+    <p>Our ML model will recognise whether the uploaded picture has normal leg or leg with disease</p>
+    <br>
+    <form action="/result" method="post" enctype="multipart/form-data">
+    <div class="container batan"><input type="file" name="file" accept="image/*" required></div>
+    <br>
+    <div class="container batan"><input type="submit" value="Upload and Predict"></div>
+    
+  </form>
+</div>
+{% if img_name %}
+<div class="row" style="margin-top:10px;margin-bottom:10px;">
+    <h2>{{status}}</h2>
+    <div class="col text-center">
+        <img width="150px" src='../static/uploads/{{img_name}}'
+            style="display: block;margin-left: auto;margin-right: auto;">
+    </div>
+</div>
+{% endif %}
+</body>
+<style> 
+h1{
+  text-align: center;
+}
+h2{
+  text-align: center;
+}
+p{
+  text-align: center;
+}
+.batan{
+  text-align: center;
+}
+input{
+  padding: 8px;
+  border-radius: 20px;
+}
+</style>
+</html>
